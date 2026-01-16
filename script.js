@@ -4,6 +4,9 @@ const numsEl = document.getElementById("nums");
 const symbolsEl = document.getElementById("symbols");
 const generateButton = document.getElementById("generate");
 const themeToggle = document.getElementById("theme-toggle");
+const copyButton = document.getElementById("copy-button");
+const passwordText = document.getElementById("password-text");
+const hiddenText = document.getElementById("hidden-text");
 
 function getRandomNum() {
   const num = Math.random() * 10;
@@ -62,7 +65,7 @@ generateButton.addEventListener("click", () => {
   const num = numsEl.checked;
   const sym = symbolsEl.checked;
 
-  resultEl.innerText = generatePassword(num, lower, upper, sym, length);
+  passwordText.innerText = generatePassword(num, lower, upper, sym, length);
 });
 
 themeToggle.addEventListener("click", () => {
@@ -70,10 +73,12 @@ themeToggle.addEventListener("click", () => {
   if (currentTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "light");
     themeToggle.setAttribute("fill", "black");
+    copyButton.setAttribute("fill", "black");
     localStorage.setItem("theme", "light");
   } else {
     document.documentElement.setAttribute("data-theme", "dark");
     themeToggle.setAttribute("fill", "white");
+    copyButton.setAttribute("fill", "white");
     localStorage.setItem("theme", "dark");
   }
 });
@@ -84,3 +89,11 @@ if (theme === "dark") {
 } else {
   document.documentElement.setAttribute("data-theme", "light");
 }
+
+copyButton.addEventListener("click", () => {
+  navigator.clipboard.writeText(passwordText.innerText);
+  hiddenText.classList.add('show');
+  setTimeout(() => {
+    hiddenText.classList.remove('show');
+  },1000
+)});

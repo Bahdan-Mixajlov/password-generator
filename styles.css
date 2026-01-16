@@ -65,6 +65,8 @@ h1 {
   padding: 20px;
   border-radius: 10px;
   font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .parameters {
@@ -121,4 +123,22 @@ html[data-theme="light"] {
   --result-container-color: #eeeeee;
   --p-color: #555555;
   --decoration-color: #737373;
+}
+
+#copy-button:hover {
+  cursor: pointer;
+  fill: white;
+}
+
+.hidden-text{
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.show{
+  opacity:1;
+  visibility: visible;       
+  transform: translateY(0); 
 }
