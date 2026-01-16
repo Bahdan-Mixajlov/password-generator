@@ -3,6 +3,7 @@ const lengthEl = document.getElementById("length");
 const numsEl = document.getElementById("nums");
 const symbolsEl = document.getElementById("symbols");
 const generateButton = document.getElementById("generate");
+const themeToggle = document.getElementById("theme-toggle");
 
 function getRandomNum() {
   const num = Math.random() * 10;
@@ -63,3 +64,23 @@ generateButton.addEventListener("click", () => {
 
   resultEl.innerText = generatePassword(num, lower, upper, sym, length);
 });
+
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  if (currentTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "light");
+    themeToggle.setAttribute("fill", "black");
+    localStorage.setItem("theme", "light");
+  } else {
+    document.documentElement.setAttribute("data-theme", "dark");
+    themeToggle.setAttribute("fill", "white");
+    localStorage.setItem("theme", "dark");
+  }
+});
+
+const theme = localStorage.getItem("theme");
+if (theme === "dark") {
+  document.documentElement.setAttribute("data-theme", "dark");
+} else {
+  document.documentElement.setAttribute("data-theme", "light");
+}
