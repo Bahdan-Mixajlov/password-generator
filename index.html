@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple password generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Simple password generator</h1>
+        <p>
+          Select the required parameters (length, symbols)<br />
+          and click the generate button
+        </p>
+        <div class="result" id="result">
+          <span>Generation results will be here</span>
+        </div>
+        <div class="parameters">
+          <div class="parameter">
+            <label for="length">Password length</label>
+            <input
+              type="number"
+              id="length"
+              name="length"
+              min="8"
+              max="24"
+              value="8"
+            />
+          </div>
+          <div class="parameter">
+            <label for="nums">Include numbers</label>
+            <input type="checkbox" id="nums" name="num" checked />
+          </div>
+          <div class="parameter">
+            <label for="symbols"
+              >Include special symbols
+              <span class="decoration">(!@#$)</span></label
+            >
+            <input type="checkbox" id="symbols" name="symbols" />
+          </div>
+        </div>
+        <button id="generate" name="generate">Generate</button>
+      </div>
+    </main>
+  </body>
+</html>

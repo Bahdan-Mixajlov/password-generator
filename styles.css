@@ -1,0 +1,88 @@
+html {
+  box-sizing: border-box;
+  font-family: "Open Sans", arial;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: #242424;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.2rem;
+  padding: 10px;
+}
+
+.container {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  color: #f2f2f2;
+  box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+}
+
+.result {
+  background-color: black;
+  width: 80%;
+  height: 10%;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.parameters {
+  width: 80%;
+  margin: 20px auto 0 auto;
+}
+
+.parameter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+p {
+  text-align: center;
+  margin-top: -10px;
+  color: #a3a3a3;
+}
+
+button {
+  padding: 10px;
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 40%;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #8c8c8c;
+}
+
+.decoration {
+  color: #8c8c8c;
+}
