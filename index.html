@@ -57,15 +57,24 @@
         </div>
         <div class="parameters">
           <div class="parameter">
-            <label for="length">Password length</label>
+            <label for="length">Password length <span class="decoration">(8-24)</span></label>
             <input
-              type="number"
+              type="range"
               id="length"
               name="length"
-              min="8"
-              max="24"
+              min="4"
+              max="26"
               value="8"
             />
+            <div class="length-container" id="length-container"></div>
+          </div>
+          <div class="parameter">
+            <label for="upper-case">Uppercase</label>
+            <input type="checkbox" id="upper-case" name="upper-case" checked />
+          </div>
+          <div class="parameter">
+            <label for="lower-case">Lowercase</label>
+            <input type="checkbox" id="lower-case" name="lower-case" checked />
           </div>
           <div class="parameter">
             <label for="nums">Include numbers</label>

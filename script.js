@@ -7,6 +7,9 @@ const themeToggle = document.getElementById("theme-toggle");
 const copyButton = document.getElementById("copy-button");
 const passwordText = document.getElementById("password-text");
 const hiddenText = document.getElementById("hidden-text");
+const upperCase = document.getElementById("upper-case");
+const lowerCase = document.getElementById("lower-case");
+const lengthContainer = document.getElementById("length-container");
 
 function getRandomNum() {
   const num = Math.random() * 10;
@@ -60,8 +63,8 @@ function generatePassword(
 
 generateButton.addEventListener("click", () => {
   const length = +lengthEl.value;
-  const lower = true;
-  const upper = true;
+  const lower = lowerCase.checked;
+  const upper = upperCase.checked;
   const num = numsEl.checked;
   const sym = symbolsEl.checked;
 
@@ -97,3 +100,7 @@ copyButton.addEventListener("click", () => {
     hiddenText.classList.remove('show');
   },1000
 )});
+
+lengthEl.addEventListener("input", () =>{
+  lengthContainer.innerText = lengthEl.value;
+});

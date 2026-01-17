@@ -142,3 +142,24 @@ html[data-theme="light"] {
   visibility: visible;       
   transform: translateY(0); 
 }
+
+input[type="number"]{
+  border-radius:10px;
+  padding:5px;
+  border:none;
+  appearance: textfield;
+  text-align: center;
+}
+
+#nums, #symbols, #lower-case, #upper-case, #length{
+  cursor:pointer;
+}
+
+.length-container{
+  background-color:white;
+  border-radius:5px;
+  width:40px;
+  padding:5px;
+  color:black;
+  text-align:center;
+}
