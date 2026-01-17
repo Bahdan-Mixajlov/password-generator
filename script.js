@@ -23,12 +23,12 @@ function getRandomSym() {
 }
 
 function getRandomLower() {
-  const lower = Math.floor(Math.random() * 25) + 97;
+  const lower = Math.floor(Math.random() * 26) + 97;
   return String.fromCharCode(lower);
 }
 
 function getRandomUpper() {
-  const upper = Math.floor(Math.random() * 25) + 65;
+  const upper = Math.floor(Math.random() * 26) + 65;
   return String.fromCharCode(upper);
 }
 
@@ -37,7 +37,7 @@ function generatePassword(
   randomLower,
   randomUpper,
   randomSym,
-  length
+  length,
 ) {
   let generatedPassword = "";
 
@@ -52,7 +52,7 @@ function generatePassword(
     return "";
   }
 
-  for (i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * activeFunctions.length);
     const randomFunc = activeFunctions[randomIndex];
     generatedPassword += randomFunc();
@@ -95,12 +95,12 @@ if (theme === "dark") {
 
 copyButton.addEventListener("click", () => {
   navigator.clipboard.writeText(passwordText.innerText);
-  hiddenText.classList.add('show');
+  hiddenText.classList.add("show");
   setTimeout(() => {
-    hiddenText.classList.remove('show');
-  },1000
-)});
+    hiddenText.classList.remove("show");
+  }, 1000);
+});
 
-lengthEl.addEventListener("input", () =>{
+lengthEl.addEventListener("input", () => {
   lengthContainer.innerText = lengthEl.value;
 });
